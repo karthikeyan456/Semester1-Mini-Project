@@ -1,0 +1,30 @@
+import cv2
+img=cv2.imread("usain.jpg")
+rows=img.shape[0]
+columns=img.shape[1]
+#print(rows,columns)
+def bool1(color):
+    binary = 0
+    digit = 0
+    temp = color  #copy input decimal
+
+    #find binary value using while loop
+    while(temp > 0):
+        binary = ((temp%2)*(10**digit)) + binary#works based on taking the remainder of 2(0,1)
+        temp = int(temp//2)#and multiplying by digit(length in reverse
+        digit += 1
+    return binary
+
+
+c=0
+'''for i in range(rows):
+    for j in range(columns):
+            print(img[i,j])'''
+for i in range(rows):
+    for j in range(columns):
+        c=img[i,j]
+        print('\n')
+        for color in c:
+            print(bool1(color),end=",")
+
+
