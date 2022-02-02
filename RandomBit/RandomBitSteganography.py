@@ -12,7 +12,7 @@ def countpixels(fname):
              co+=1
      return co
 
-def generaterandom(key):
+def generaterandom(key):#linear generation of the random number 
     a=1
     b=9
     return a*key+b
@@ -53,14 +53,14 @@ def encode(fname,data):
     else:
         st.write("Encoding Image!!!Please Wait.....")
         blen=len(binstr)
-        encpos=randomnumber((blen//3)+1,1000)
+        encpos=randomnumber((blen//3)+1,1000)#why you are dividing blen//3 i cannot understand
         ind=0
         c=0
         #pos=encpos[c]
         encoded=[]
         if max(encpos)>=countpixels(fname):
             st.error("Pixels not sufficient.Choose another key.")
-            return
+            return #why you have stopped with return
         
         #nexpos=encpos[t]
         print(encpos)
