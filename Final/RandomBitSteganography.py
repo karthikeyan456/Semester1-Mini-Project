@@ -81,12 +81,12 @@ def encode(fname,data,key):
                 
                 if ind<blen and c in encpos:#Encoding in the green value of pixel
                     gval=numtobin(pix[1])
-                    pix[1]=int(gval[:-1]+binstr[ind])
+                    pix[1]=int(gval[:-1]+binstr[ind],2)
                     ind+=1
 
                 if ind<blen and c in encpos:#Encoding in the blue value of the pixel.
                     bval=numtobin(pix[2])
-                    pix[2]=int(bval[:-1]+binstr[ind])
+                    pix[2]=int(bval[:-1]+binstr[ind],2)
                     ind+=1
 
                 if ind>=blen:#Breaking out the loop if all the bits in the binary data are encoded.
